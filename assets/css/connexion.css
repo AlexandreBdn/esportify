@@ -3,12 +3,16 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden; /* empêche le scroll */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
+footer {
+  margin-top: auto;
+}
 .auth-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     flex-direction: row;
     gap: 300px;
     padding: 60px 20px;
@@ -17,6 +21,8 @@ html, body {
     color: white;
     flex-wrap: wrap;
     overflow: hidden;
+    height: calc(100vh - 80px); /* moins la hauteur estimée du header */
+    align-items: center;
 }
 
 .auth-box {
@@ -25,8 +31,10 @@ html, body {
     padding: 40px 30px;
     border-radius: 10px;
     width: 350px;
+    height: 430px; /* ou une valeur adaptée selon ton design */
     text-align: left;
     backdrop-filter: blur(10px);
+    min-height: 430px;
 }
 
 .auth-box img.logo {
