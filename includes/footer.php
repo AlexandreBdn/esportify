@@ -16,3 +16,4 @@
         <small>&copy; <?php echo date("Y"); ?> Esportify – Tous droits réservés.</small>
     </div>
 </footer>
+</html>
