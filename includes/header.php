@@ -16,7 +16,7 @@
                 <span>Esportify</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.php">Acceuil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="#">Evenements</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
