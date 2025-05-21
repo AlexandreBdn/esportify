@@ -217,3 +217,39 @@ footer {
     opacity: 0.6;
     font-size: 13px;
 }
+
+.user-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.initial {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff22;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-participer {
+    background-color: #1C1F33;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-participer:hover {
+    background-color: #BB2A2A;
+}
+
+
+
+
