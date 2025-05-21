@@ -58,24 +58,6 @@
                 <p><strong>nb. Joueur :</strong>8/16</p>
                 <button class="btn-disabled" disabled>Connectez-vous pour participer</button>
             </div>
-             <div class="event-card">
-                <p><strong>Date/Heure :</strong> 28 mai - 20h</p>
-                <p><strong>Titre :</strong>Tournoi Valorant</p>
-                <p><strong>nb. Joueur :</strong>8/16</p>
-                <button class="btn-disabled" disabled>Connectez-vous pour participer</button>
-            </div>
-             <div class="event-card">
-                <p><strong>Date/Heure :</strong> 28 mai - 20h</p>
-                <p><strong>Titre :</strong>Tournoi Valorant</p>
-                <p><strong>nb. Joueur :</strong>8/16</p>
-                <button class="btn-disabled" disabled>Connectez-vous pour participer</button>
-            </div>
-             <div class="event-card">
-                <p><strong>Date/Heure :</strong> 28 mai - 20h</p>
-                <p><strong>Titre :</strong>Tournoi Valorant</p>
-                <p><strong>nb. Joueur :</strong>8/16</p>
-                <button class="btn-disabled" disabled>Connectez-vous pour participer</button>
-            </div>
         </div>
     </div>
 </section>
