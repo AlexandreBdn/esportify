@@ -10,10 +10,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
     $id = (int) $_POST['user_id'];
-
+      
     $stmt = $pdo->prepare("UPDATE utilisateur SET est_valide = 1 WHERE id = ?");
     $stmt->execute([$id]);
-
+    
     // Redirection avec message de succès
     header('Location: ../pages/admin.php?success=1');
     exit;

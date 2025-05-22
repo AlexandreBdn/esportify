@@ -4,11 +4,14 @@
 $requete = $pdo->query("SELECT * FROM evenement WHERE visible = 1 ORDER BY date_debut ASC");
 $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <section class="hero">
     <div class="container">
         <h1>Bienvenue sur Esportify</h1>
-        <p>Participez a des tournois e-sport palpitants, affrontez des joueurs du monde entier , devenez le meilleur, et suivez vos performance ! </p>
+        <p>Participez a des tournois e-sport palpitants, affrontez des joueurs du monde entier , devenez le meilleur, et suivez vos performance ! </p><br>
+        <p>🎮 Esportify est une plateforme dynamique dédiée à l’univers de l’e-sport amateur et semi-professionnel. Notre mission ? Offrir un espace simple 
+          et intuitif où les passionnés peuvent organiser, rejoindre et suivre des tournois compétitifs en ligne dans une variété de jeux populaires. Que vous soyez joueur, 
+          organisateur ou spectateur, Esportify vous connecte à une communauté grandissante de challengers motivés, le tout dans une interface moderne et conviviale. Préparez 
+          votre équipe, affrontez les meilleurs et faites briller votre nom dans l’arène numérique !</p>
     </div>
 </section>
 
@@ -24,11 +27,11 @@ $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </section>
 
+<?php $compteur = 0; ?>
 <section class="evenements">
     <div class="container">
         <h2>Evenements a venir</h2> 
         <div class="event-grid">
-            <?php $compteur = 0; ?>
             <?php foreach ($evenements as $event): 
                 if ($compteur >= 6) {
                     break; // Arrête la boucle après 6 événement

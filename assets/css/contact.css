@@ -7,7 +7,7 @@ html, body{
     flex-direction: column;
 }
 .contact-container {
-    background-color: #2b99a0; /* même bleu que les cartes évènement */
+    background-color: #114e55; /* même bleu que les cartes évènement */
     border-radius: 8px;
     padding: 25px;
     margin: 50px auto;

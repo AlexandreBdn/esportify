@@ -34,6 +34,20 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     </div>
 <?php endif; ?>
 
+<?php if (isset($_GET['success']) && $_GET['success'] === 'creerEvent') : ?>
+    <div class="success" style="color: orange; margin-bottom: 15px;">
+        L'evenement est en cour de validation !
+    </div>
+<?php endif; ?>
+
+<?php if (isset($_GET['supprime']) && $_GET['supprime'] === 'ok') : ?>
+    <div class="success" style="color: green;">Tournoi supprimé avec succès ✅</div>
+<?php elseif (isset($_GET['supprime']) && $_GET['supprime'] === 'erreur') : ?>
+    <div class="error" style="color: red;">❌ Impossible de supprimer ce tournoi.</div>
+<?php endif; ?>
+
+
+
 
 <section class="evenements-container">
     <h2>Tous les tournois à venir</h2>
@@ -123,10 +137,36 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
                 echo '<button disabled class="btn-participer">Connectez-vous pour participer</button>';
             }
 
+            // Vérifie si l'utilisateur peut supprimer
+
+            if (
+    isset($_SESSION['user_id'], $_SESSION['user_role']) &&
+    (
+        ($_SESSION['user_id'] == $idOrganisateur && isset($dateDebut, $maintenant) && $maintenant - $dateDebut > 3600)
+        || ($_SESSION['user_role'] === 'admin' && isset($dateDebut, $maintenant) && $maintenant - $dateDebut > 3600)
+    )
+) {
+    // Affiche le bouton Supprimer
+    echo '<form action="../controllers/supprimerTournoiController.php" method="post" style="margin-top: 10px;">';
+      echo '<input type="hidden" name="id_tournoi" value="' . $idEvent . '">';
+      echo '<button type="submit" class="btn-participer" onclick="return confirm(\'Supprimer ce tournoi ?\')">🗑 Supprimer</button>';
+      echo '</form>';
+}
             echo "</div>";
+            
+
+            
         }
         ?>
     </div>
+        <?php 
+        if ((isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'organisateur') || (($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin')) : ?>
+        <div class="create-tournament">
+            <a href="../pages/creerTournoi.php" class="btn-participer lien">Créer un tournoi</a>
+
+        </div>
+        <?php endif; ?>
+
 </section>
 
 <?php require_once '../includes/footer.php'; ?>

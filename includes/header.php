@@ -7,6 +7,12 @@
 <?php if (isset($page) && $page === 'profil') : ?>
   <link rel="stylesheet" href="../assets/css/profil.css">
 <?php endif; ?>
+<?php if (isset($page) && $page === 'creationEquipe') : ?>
+  <link rel="stylesheet" href="../assets/css/profil.css">
+<?php endif; ?>
+<?php if (isset($page) && $page === 'creationTournoi') : ?>
+  <link rel="stylesheet" href="../assets/css/formTournoi.css">
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

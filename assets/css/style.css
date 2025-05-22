@@ -140,7 +140,7 @@ header {
 }
 
 .event-card {
-    background-color: #329ca8;
+    background-color: #114e55;
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
@@ -244,6 +244,7 @@ footer {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-participer:hover {
