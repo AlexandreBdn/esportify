@@ -1,9 +1,9 @@
 <?php
 // Paramètres de connexion
-$host = 'localhost';
-$dbname = 'esportify_db';
-$user = 'root';
-$pass = '';
+$host = 'mysql-esportify2025.alwaysdata.net';
+$dbname = 'esportify2025_db';
+$user = '414530';
+$pass = 'SeoulKyoto';
 
 // Options PDO sécurisées
 $options = [
