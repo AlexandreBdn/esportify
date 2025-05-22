@@ -1,0 +1,93 @@
+body {
+    background-color: #1C1F33;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    
+    flex: 1;
+    padding: 40px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.equipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.equipe-card {
+    background-color: #114e55;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    min-width: 220px;
+}
+
+.equipe-card button {
+    background-color: #1C1F33;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.equipe-card button:hover {
+    background-color: #bb2a2a;
+}
+
+footer {
+    background-color: #1C1F33;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto;
+}
+form {
+  margin: 10px auto;
+  text-align: center;
+}
+
+button {
+  background-color: #1C1F33;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+
+button:hover {
+  background-color: #BB2A2A;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .equipe-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .equipe-card {
+        width: 90%;
+    }
+}

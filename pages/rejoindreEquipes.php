@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page = 'equipe';
 require_once '../config/database.php';
 
 // Vérifie qu'on est connecté
@@ -19,12 +20,17 @@ if ($verif->fetchColumn() > 0) {
 // Récupère les équipes disponibles
 $equipes = $pdo->query("SELECT idEquipe, nom FROM equipe")->fetchAll();
 ?>
-
-<h2>Rejoindre une équipe</h2>
-
-<?php foreach ($equipes as $equipe): ?>
-    <form action="../controllers/rejoindreEquipeController.php" method="post" style="display:inline;">
-        <input type="hidden" name="idEquipe" value="<?= $equipe['idEquipe'] ?>">
-        <button type="submit"><?= htmlspecialchars($equipe['nom']) ?> — Rejoindre</button>
-    </form>
-<?php endforeach; ?>
+<main>
+    <h2>Rejoindre une équipe</h2>
+    <div class="equipe-container">
+        <?php foreach ($equipes as $equipe) : ?>
+            <div class="equipe-card">
+                <form action="../controllers/rejoindreEquipeController.php" method="post">
+                    <input type="hidden" name="idEquipe" value="<?= $equipe['idEquipe'] ?>">
+                    <p><?= htmlspecialchars($equipe['nom']) ?></p>
+                    <button type="submit">Rejoindre</button>
+                </form>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</main>

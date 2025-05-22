@@ -13,7 +13,7 @@ session_start();
 
 <?php require_once '../includes/header.php'; ?>
 
-<div class="contact-container" style="max-width: 600px; margin: auto; padding: 20px 300px;">
+<div class="contact-container">
     <h2>Contactez-nous</h2>
 
     <?php

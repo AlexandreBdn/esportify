@@ -46,9 +46,6 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     <div class="error" style="color: red;">❌ Impossible de supprimer ce tournoi.</div>
 <?php endif; ?>
 
-
-
-
 <section class="evenements-container">
     <h2>Tous les tournois à venir</h2>
 
@@ -160,7 +157,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
         ?>
     </div>
         <?php 
-        if ((isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'organisateur') || (($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin')) : ?>
+        if ((isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'organisateur') || (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin')) : ?>
         <div class="create-tournament">
             <a href="../pages/creerTournoi.php" class="btn-participer lien">Créer un tournoi</a>
 

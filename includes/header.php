@@ -13,6 +13,9 @@
 <?php if (isset($page) && $page === 'creationTournoi') : ?>
   <link rel="stylesheet" href="../assets/css/formTournoi.css">
 <?php endif; ?>
+<?php if (isset($page) && $page === 'equipe') : ?>
+  <link rel="stylesheet" href="../assets/css/rejoindreEquipe.css">
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +33,12 @@
                 </a>
                 <span>Esportify</span>
             </div>
-            <ul class="nav-links">
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="../pages/evenement.php">Evenements</a></li>
                 <li><a href="../pages/contact.php">Contact</a></li>

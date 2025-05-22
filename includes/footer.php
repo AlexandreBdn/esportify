@@ -1,3 +1,4 @@
+<script src="/assets/js/burger.js"></script>
 </body>
 <footer>
     <div class="footer-content">
