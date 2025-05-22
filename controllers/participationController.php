@@ -31,8 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['event_id'], $_SESSION
         $nbRequis = $stmtRequis->fetchColumn();
 
     }
-    if ($nbJoueursEquipe != $nbRequis) {
+    if ($nbJoueursEquipe < $nbRequis) {
     header('Location: ../pages/evenement.php?erreur=incomplete');
+    exit;
+    }
+    if ($nbJoueursEquipe > $nbRequis) {
+    header('Location: ../pages/evenement.php?erreur=too_many');
     exit;
 }
 

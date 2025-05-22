@@ -39,6 +39,7 @@ require_once '../includes/header.php';
     </div>
 <?php endif; ?>
 
+
 <section class="auth-container">
     <div class="auth-box login">
         <img src="../assets/images/Logo.png" alt="Esportify" class="logo" style="max-width: 100px;" />

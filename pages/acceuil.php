@@ -26,13 +26,17 @@ $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
 
 <section class="evenements">
     <div class="container">
-        <h2>Evenements a venir</h2>
-        <div class="evenements-grid">
-  <?php foreach ($evenements as $event): ?>
-        <div class="event-card">
-      <p><strong>Date/Heure :</strong> <?= date('d M - H\h', strtotime($event['date_debut'])) ?></p>
-      <p><strong>Titre :</strong> <?= htmlspecialchars($event['titre']) ?></p>
-      <p><strong>nb. Joueur :</strong> 
+        <h2>Evenements a venir</h2> 
+        <div class="event-grid">
+            <?php $compteur = 0; ?>
+            <?php foreach ($evenements as $event): 
+                if ($compteur >= 6) {
+                    break; // Arrête la boucle après 6 événement
+                }?>
+                <div class="event-card">
+            <p><strong>Date/Heure :</strong> <?= date('d M - H\h', strtotime($event['date_debut'])) ?></p>
+            <p><strong>Titre :</strong> <?= htmlspecialchars($event['titre']) ?></p>
+            <p><strong>nb. Joueur :</strong> 
         <?php
           // Compte les joueurs inscrits
           $idEvent = $event['idEvenement'];
@@ -45,10 +49,10 @@ $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
         $stmt->execute([$idEvent]);
         $nbJoueurs = $stmt->fetch()['total_joueurs'] ?? 0;
         $nbParEquipe = $event['nb_joueurs_par_equipe'] ?? 0;
-        $nbEquipes   = $event['nb_equipes'] ?? 0;
+        $nbEquipes   = $event['nb_equipes_max'] ?? 0;
         $nbMaxJoueurs = $nbParEquipe * $nbEquipes;
 
-        echo $nbJoueurs . ' / ' . $nbMaxJoueurs;
+        echo $nbJoueurs . ' / ' . $event['nb_joueurs_par_equipe'] * $event['nb_equipes_max'];
 
         ?>
       </p>
@@ -58,10 +62,12 @@ $evenements = $requete->fetchAll(PDO::FETCH_ASSOC);
           <button type="submit">Voir les événements</button>
         </form>
       <?php else: ?>
-        <button disabled>Connectez-vous pour participer</button>
+        <button class="btn-disabled" disabled>Connectez-vous pour participer</button>
+        <?php $compteur++; ?>
       <?php endif; ?>
     </div>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
+</div>
 </div>
 
     </div>

@@ -1,0 +1,99 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* empêche le scroll */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1c1f26;
+}
+footer {
+  margin-top: auto;
+}
+
+
+/* Section principale */
+.tournoi-container {
+    background-color: #1C1F24;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    max-width: 1100px;
+    margin: 140px auto;
+}
+
+/* Section Match */
+.match-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.match-header h2 {
+    margin-bottom: 10px;
+}
+.match-equipes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.match-equipes .btn {
+    padding: 10px 20px;
+    background-color: #2f343f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Section Discussion + Participants */
+.grid-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Salon de discussion */
+.salon {
+    background-color: #2A2E39;
+    padding: 20px;
+    border-radius: 8px;
+}
+.salon h3 {
+    margin-bottom: 10px;
+}
+.salon ul {
+    list-style: none;
+    padding: 0;
+}
+.salon li {
+    background-color: #3B3F4C;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Participants */
+.participants {
+    background-color: #2A2E39;
+    padding: 20px;
+    border-radius: 8px;
+}
+.participants h3 {
+    margin-bottom: 10px;
+}
+.participants-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.participants-table div {
+    background-color: #3B3F4C;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: center;
+}
+

@@ -250,6 +250,12 @@ footer {
     background-color: #BB2A2A;
 }
 
-
-
-
+.badge-started {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 2px 8px;
+    margin-left: 10px;
+    border-radius: 12px;
+    font-size: 0.85em;
+}

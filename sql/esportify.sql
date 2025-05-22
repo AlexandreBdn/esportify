@@ -8,7 +8,8 @@ CREATE TABLE Utilisateur (
     nom VARCHAR(45) NOT NULL,
     email VARCHAR(45) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
-    role ENUM('joueur', 'organisateur', 'admin') NOT NULL
+    role ENUM('joueur', 'organisateur', 'admin') NOT NULL,
+    est_valide TINYINT(1) DEFAULT 1
 );
 
 CREATE Table Evenement (
@@ -20,6 +21,7 @@ CREATE Table Evenement (
     id_organisateur INT NOT NULL,
     nb_joueurs_par_equipe INT NOT NULL DEFAULT 2,
     nb_equipes_max INT NOT NULL DEFAULT 8,
+    est_commence TINYINT(1) DEFAULT 0,
     Foreign Key (id_organisateur) REFERENCES Utilisateur(id)
         ON DELETE CASCADE
 );

@@ -4,13 +4,16 @@
 <?php if (isset($page) && $page === 'evenement') : ?>
   <link rel="stylesheet" href="/assets/css/evenement.css">
 <?php endif; ?>
+<?php if (isset($page) && $page === 'profil') : ?>
+  <link rel="stylesheet" href="../assets/css/profil.css">
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esportify</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header>
@@ -25,14 +28,24 @@
                 <li><a href="../index.php">Accueil</a></li>
                 <li><a href="../pages/evenement.php">Evenements</a></li>
                 <li><a href="../pages/contact.php">Contact</a></li>
+                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') : ?>
+                <a href="../pages/admin.php">Admin</a>
+                <?php endif; ?>
             </ul>
             <div class="auth-actions">
                 <?php if (isset($_SESSION['user_id'])):?>
                 <div class="user-badge">
-                    <span class="initial"><?php echo strtoupper(substr($_SESSION['user_nom'],0,1)); ?></span>
+                    <span class="initial"> 
+                    <?php echo strtoupper(substr($_SESSION['user_nom'],0,1)); ?></span>
                     <div class="nav-buttons">
                         <a href="../controllers/logout.php" class="btn">Deconnexion</a>
                     </div>
+                    <?php if (isset($_SESSION['user_id'])) : ?>
+                        <div class="nav-buttons">
+                            <a href="../pages/profil.php" class="btn">Profil</a>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
                 <?php else: ?>
                 <div class="nav-buttons">
